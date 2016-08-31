@@ -1,0 +1,13 @@
+<article>
+	<form method="post" action="?page=crea_erase_comment">
+		<h2><?=$article["title"]?></h2>
+		<p><?=$article["content"]?></p>
+		<div class="date"><?=$article["date_articles"]?></div>
+		<div class="author"><?=$_SESSION["login"]?></div>
+		<input type="hidden" name="id" value="<?=$article["id"]?>">
+		<input type="hidden" name="action" value="comment">
+		<textarea type="text" name="comment"></textarea>
+		<button type="submit">envoyer</button>
+	</form>
+	
+</article>
