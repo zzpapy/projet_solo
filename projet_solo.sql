@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 31 Août 2016 à 11:12
+-- Généré le: Jeu 01 Septembre 2016 à 16:49
 -- Version du serveur: 5.5.49-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.17
 
@@ -36,7 +36,14 @@ CREATE TABLE IF NOT EXISTS `articles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `title` (`title`),
   KEY `users_id` (`users_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=36 ;
+
+--
+-- Contenu de la table `articles`
+--
+
+INSERT INTO `articles` (`id`, `title`, `users_id`, `content`, `img`, `date_articles`) VALUES
+(34, 'gtrtgtgtrgtrgertgtrgrtgrtgtrgregreger', 12, '', '', '0555-05-05');
 
 -- --------------------------------------------------------
 
@@ -53,7 +60,15 @@ CREATE TABLE IF NOT EXISTS `comments` (
   PRIMARY KEY (`id`),
   KEY `articles_id` (`articles_id`),
   KEY `users_id` (`users_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=60 ;
+
+--
+-- Contenu de la table `comments`
+--
+
+INSERT INTO `comments` (`id`, `articles_id`, `users_id`, `content`, `date_comments`) VALUES
+(58, 34, 12, '', '0000-00-00'),
+(59, 34, 12, '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -65,11 +80,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
   `email` varchar(63) COLLATE utf8_bin NOT NULL,
-  `login` varchar(31) COLLATE utf8_bin NOT NULL,
+  `pseudo` varchar(31) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+  UNIQUE KEY `login` (`pseudo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=13 ;
+
+--
+-- Contenu de la table `users`
+--
+
+INSERT INTO `users` (`id`, `password`, `email`, `pseudo`) VALUES
+(10, 'toto', 'toto@toto.toto', 'toto'),
+(11, '$2y$10$MaRlfyT/FOwc1oLEvRIYiOD/v5RbCbMKDJxJwp9jJph2IrJ1/DliG', 'w@w.fr', 'w'),
+(12, '$2y$10$HpfiCfJaJSmeoYGk.2cxXePnfGtrE/vmv7tlKb0qJZoulARTjnNYi', 'z@z', 'z');
 
 --
 -- Contraintes pour les tables exportées
@@ -85,8 +109,8 @@ ALTER TABLE `articles`
 -- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`articles_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`articles_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
