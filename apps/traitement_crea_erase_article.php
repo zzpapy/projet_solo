@@ -1,4 +1,20 @@
 <?php 
+
+if (isset($_POST["edit"],$_POST["title"], $_POST['content'], $_POST['date_articles']))
+{
+	$title=$_POST["title"];
+	$content=$_POST['content'];
+	$date_articles= $_POST['date_articles'];
+	$id=$_POST["edit"];
+	$res=mysqli_query($db,'UPDATE articles SET title="'.$title.'", content="'.$content.'",date_articles="'.$date_articles.'" WHERE id="'.$id.'"');
+	// var_dump($_POST,mysqli_error($db));
+	// die();
+	header("Location: index.php?page=article&id=".$id);
+			exit; 
+
+}
+// var_dump($_POST);
+// die();
 if (isset($_POST["action"]))
 {
 	if(isset($_POST["title"],$_POST["content"],$_POST["date_articles"]) && $_POST["action"]=="create")
@@ -38,6 +54,21 @@ if (isset($_POST["action"]))
 			exit; 
 		}
 	}
+}
+if (isset($_POST["action"],$_POST["id"])&& $_POST["action"]=="erase")
+{
+	$id = intval($_POST['id']);
+
+	if(isset($_POST["action"]) && $_POST["action"] == "comment"){
+		$query = "DELETE FROM comments WHERE id=".$comments["articles_id"];
+	}else{
+		$query = "DELETE FROM articles WHERE id=".$id;
+	}
+	mysqli_query($db, $query);
+	
+	header("Location: index.php?page=home");
+
+	exit;
 }
 
  ?>

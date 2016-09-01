@@ -1,9 +1,12 @@
-<nav class="navbar">
-	<ul class="menu">
-		<? echo "connecté"?>
-		<li><a href="?page=home">accueil</a></li>
-		<li><a href="index.php?page=login_register">connection/inscription</a></li>
-		<li><a href="index.php?page=crea_erase_article">ecrire un article</a></li>
-		<li><a href="index.php?page=login_register"></a></li>
-	</ul>
+<nav class="navbar nav-tabs navbar-default navbar-inverse">
+	
+		
+		<ul class="menu">
+			<? echo "connecté"?>
+			<li><a href="?page=home">accueil</a></li>
+			<li><a href="index.php?page=logout">logout</a></li>
+			<li><a href="index.php?page=crea_erase_article">ecrire un article</a></li>
+			<div>vous etes connecté : <?=$_SESSION["login"]?>
+		</ul>
+		
 </nav>

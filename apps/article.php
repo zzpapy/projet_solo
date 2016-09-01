@@ -1,5 +1,5 @@
 <?php 
-var_dump($_GET,$_SESSION["login"]);
+
 	$id=$_GET['id'];
 
 	$res = mysqli_query($db,' SELECT * FROM articles WHERE id="'.$id.'" ');

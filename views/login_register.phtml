@@ -1,50 +1,79 @@
-<div class="login">
-<!--	<?=$error?>  -->
-	<h2>Identification</h2>
-	<form method="post">
-		<!-- login -->
-		<div>
-			<label class="white" for="aliaslogin">Email :</label>
-			<input id="aliaslogin" type="text" name="email" placeholder=""/>
-		</div>
-		<!-- password -->
-		<div>
-			<label class="white" for="aliasmdp">Password :</label>
-		    <input id="aliasmdp" type="text" name="password"/>
-		</div>
-		<!-- Connexion -->
-		<div>
-			<button type="submit" name="login" value="login">Connexion</button>
-		</div>
-	</form>
-</div>
+<div class="container">
+	<div class="login gradAndBoxShad">
+	<!--	<?=$error?>  -->
+		<h2>Identification</h2>
+		<form method="post" class="form-horizontal">
+			<!-- login -->
+			
+			<div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>email</label>
+	                <input type="text" class="form-control"  name="email" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	         </div>
+			<!-- password -->
+			
+			<div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>password</label>
+	                <input type="text" class="form-control"  name="password" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	         </div>
+			<!-- Connexion -->
+			<div>
+				<button type="submit" name="login" value="login">Connexion</button>
+			</div>
+		</form>
+	</div>
 
-<div class="login gradAndBoxShad">
-	<h2>enregistrement :</h2>
-	<form method="post">	
-    	<!-- pseudo -->
-    	
-		<div>
-	    	<label class="white" for="pseudo">pseudo :</label>
-	    	<input id="pseudo" type="text" name="pseudo" placeholder=""/>
-		</div>
-		<!-- e-mail -->
-		<div>
-			<label class="white" for="aliasemail">Adresse e-mail :</label>
-			<input id="aliasemail" type="email" name="email" placeholder="Votre EMAIL"/>
-		</div>
-		<!-- password -->
-		<div>
-			<label class="white" for="aliasmdp">Password :</label>
-		    <input id="aliasmdp" type="password" name="password"/>
-	    </div>
-	    <div>
-	    	<label class="white" for="aliascmdp">Comfirm.Password :</label>
-		    <input id="aliascmdp" type="password" name="password2"/>
-		</div>
-		<!-- valid -->
-		<div>
-			<button type="submit" name="register" value="register">Envoyer</button>
-		</div>
-	</form>
+	<div class="login gradAndBoxShad">
+		<h2>enregistrement :</h2>
+
+		<form method="post">		    	
+			<div class="row control-group">
+		    				
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>pseudo</label>
+	                <input type="text" class="form-control"  name="pseudo"  >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	        </div>
+			<!-- e-mail -->
+			
+			<div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>email</label>
+	                <input type="text" class="form-control"  name="email" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	         </div>
+			<!-- password -->
+			
+		    <div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>password</label>
+	                <input type="text" class="form-control"  name="password" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	         </div>
+		   
+			<div class="row control-group">
+	            <div class="form-group col-xs-12 floating-label-form-group controls">
+	                <label>confirm password</label>
+	                <input type="text" class="form-control"  name="password2" >
+	                <p class="help-block text-danger"></p>
+	            </div>
+	         </div>
+			<!-- valid -->
+			<div>
+				<button type="submit" name="register" value="register">Envoyer</button>
+			</div>
+		</form>
+	</div>
 </div>
+ 
+
+                  
+               

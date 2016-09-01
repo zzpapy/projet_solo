@@ -1,0 +1,11 @@
+<article class="article panel-heading clearfix panel panel-default col-lg-12">
+	<form action="index.php?page=crea_erase_article" method="post">
+		<h2 ><?=$articles["title"]?></h2>
+		<p class="lead"><?=$articles["content"]?></p>
+		<div class="user"><?=$articles["users_id"]?></div>
+		<date><?=$articles["date_articles"]?></date>
+		<input type="hidden" name="id" value="<?=$articles['id']?>"> 
+		<?php require 'apps/erase_user.php' ?>
+		
+	</form>	
+</article>

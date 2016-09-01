@@ -1,9 +1,15 @@
-<div class="">
-	<form method="post"  >
-		<input type="text" name="title" value="">
-		<input type="text" name="content"value="">
-		<input type="text" name="date_articles" value="">
+<div class="container">
+	<form method="post" class="row">
+		
+		<div class="form-group">
+				<label for="title">Titre</label>
+				<input class="form-control" type="text" name="title" value="<?=$title?>" >
+				<label for="content">Contenu</label>
+				<textarea class="form-control" rows="10" name="content" value="<?=$content?>"></textarea>
+				<label for="content">Contenu</label>
+				<input class="form-control" type="date" name="date_articles" value="<?=$date_articles?>">
+			</div>
+			<input type="hidden" name="edit" value="<?=$id?>">
 		<button type="submit" name="action" value="create">envoyer</button>
 	</form>
 </div>
-

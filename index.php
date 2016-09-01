@@ -28,7 +28,8 @@
 		"crea_erase_article",
 		"crea_erase_comment",
 		"login_register",	
-		"voyage"];
+		"voyage",
+		"logout"];
 	
 	if (isset($_GET['page']) && in_array($_GET['page'], $accessTraitement)) {
 		require 'apps/traitement_'.$_GET['page'].'.php';

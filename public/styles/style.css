@@ -1,0 +1,14 @@
+.menu{
+	text-align: center;
+	color: white;
+}
+.menu li{
+	display:inline-block;
+	margin: 0 50px;
+	color: white;
+	
+}
+.article{
+	text-align: center;
+	border: 1px solid black;
+}
